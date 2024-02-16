@@ -86,3 +86,9 @@ h2 {
   display: inline-grid;
   grid-template-columns: auto auto;
 }
+
+footer {
+font-family: Arial, Helvetica, sans-serif;
+color: #585C5E;
+font-size: small;
+}
