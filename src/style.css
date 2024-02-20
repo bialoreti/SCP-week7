@@ -1,19 +1,31 @@
 body {
   font-family: arial, sans-serif;
-background: linear-gradient(to right, #A3E0F3, #C3CEE4, #DFD2C9); 
+  background: linear-gradient(to right, #a3e0f3, #c3cee4, #dfd2c9);
 }
 
-h1 {
-  color: white;
-  font-size: 24px;
-  font-weight: 100;
-  line-height: 28px;
-  margin: 0;
+.container {
+  border-radius: 20px;
+  width: 600px;
+  background-color: rgba(0, 0, 0, 0.04);
+  padding-bottom: 5px;
+  padding-top: 10px;
+  box-shadow: 5px 5px 5px #25275930;
+  margin: 50px auto;
 }
 
-h2 {
+.search-form {
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 600px;
+  background-color: transparent;
+}
+
+#city-input {
+  margin-bottom: 20px;
+  background-color: transparent;
   color: white;
-  font-size: 18px;
+  width: 105%;
 }
 
 .button {
@@ -29,42 +41,30 @@ h2 {
   transition: all 200ms ease;
   font-family: Arial, Helvetica, sans-serif;
 }
-.time {
+
+h1 {
   color: white;
-}
-.data {
-  color: white;
-  font-size: 16px;
+  font-size: 28px;
   font-weight: 100;
-  height: 19px;
-  line-height: 1;
-  list-style: none;
+  line-height: 28px;
+  margin: 0;
 }
 
-.search-form {
-  padding: 15px;
-  margin: 20px auto;
-  border-radius: 10px;
-  max-width: 600px;
-  background-color: transparent;
+h2 {
+  color: white;
+  font-size: 18px;
 }
 
-.weather-icon {
-  height: 64px;
-  width: 64px;
-  margin-top: 10px;
+.weather-data {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2%;
 }
 
-.container {
-  border-radius: 20px;
-  width: 600px;
-  background-color: rgba(0, 0, 0, 0.058);
-  padding-bottom: 60px;
-  padding-top: 10px;
-  box-shadow: 5px 5px 5px #25275930;
-  margin: 50px auto;
+.weather-details {
+  display: flex;
+  margin-right: 2%;
 }
-
 .temp {
   color: white;
   font-size: 64px;
@@ -73,26 +73,43 @@ h2 {
 }
 
 .units {
-  position: relative;
-  top: -34px;
   color: white;
+  font-weight: bold;
 }
 
-.search-form {
-  margin-bottom: 20px;
+.weather-icon {
+  font-size: 45px;
 }
+
 .form-control {
   border-radius: 20px;
   color: #a0b9de;
 }
-.grid {
-  display: inline-grid;
-  grid-template-columns: auto auto;
+
+.time {
+  color: white;
+  font-size: smaller;
+  margin-bottom: 0;
+}
+.data {
+  color: white;
+  font-size: smaller;
+  margin-top: 0;
+  height: 20px;
+  line-height: 1;
+  list-style: none;
+}
+.data strong {
+  color: #6577d3;
 }
 
 footer {
-font-family: Arial, Helvetica, sans-serif;
-color: white;
-font-size: 10px;
-text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  padding: 50px 0;
+}
+a {
+  color: #7d8cd5;
 }
