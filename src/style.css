@@ -28,6 +28,11 @@ body {
   width: 105%;
 }
 
+#city-input::placeholder {
+  color: #6577d3;
+  opacity: 0.6;
+}
+
 .button {
   background-color: white;
   color: #a0b9de;
@@ -67,7 +72,7 @@ h2 {
 }
 .temp {
   color: white;
-  font-size: 64px;
+  font-size: 66px;
   font-weight: 400;
   line-height: 1;
 }
@@ -78,7 +83,7 @@ h2 {
 }
 
 .weather-icon {
-  font-size: 45px;
+  font-size: 44px;
 }
 
 .form-control {
@@ -111,5 +116,6 @@ footer {
   padding: 50px 0;
 }
 a {
-  color: #7d8cd5;
+  color: #6577d3;
+  opacity: 0.8;
 }
