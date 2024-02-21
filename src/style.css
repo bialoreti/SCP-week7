@@ -91,12 +91,12 @@ h2 {
   color: #a0b9de;
 }
 
-.time {
+#description {
   color: white;
   font-size: smaller;
   margin-bottom: 0;
 }
-.data {
+#details {
   color: white;
   font-size: smaller;
   margin-top: 0;
@@ -104,7 +104,7 @@ h2 {
   line-height: 1;
   list-style: none;
 }
-.data strong {
+#details strong {
   color: #6577d3;
 }
 

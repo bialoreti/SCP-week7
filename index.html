@@ -29,19 +29,20 @@
         <main>
             <div class="weather-data">
                 <div>
-                    <h1 id="city">Lisboa</h1>
+                    <h1 id="city"></h1>
                     <h2 id="date">Friday, 19:11</h2>
 
-                    <p class="time">
-                        Partly Cloudy
-                    <p class="data">
-                        Humidity: <strong>77%</strong>
-                        Wind: <strong>8 km/h</strong>
+                </p> <span id="description">Partly Cloudy</span> 
+                </br> 
+                <span id="details">
+                        Humidity: <strong id="humid">%</strong>
+                        Wind: <strong id="wind">km/h</strong>
+                </span>
                 </div>
 
                 <div class="weather-details" id="weather-details">
                     <div class="weather-icon">☁️</div>
-                    <span class="temp" id="temp">19</span><span class="units"> ºC </span>
+                    <span class="temp" id="temp"></span><span class="units"> ºC </span>
 
                 </div>
 
@@ -57,6 +58,7 @@
     </div>
 
     <script src="src/index.js"></script>
+    
 </body>
 
 </html>
