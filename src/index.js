@@ -28,6 +28,7 @@ function search(event) {
   let cityElement = document.querySelector("#city");
   let cityInput = document.querySelector("#city-input");
   cityElement.innerHTML = cityInput.value;
+  
   axios
     .get(`${apiCall}?query=${cityInput.value}&key=${apiKey}`)
     .then(showTemperature);
@@ -48,21 +49,21 @@ let apiCall = "https://api.shecodes.io/weather/v1/current";
 function showTemperature(response) {
   let temperature = Math.round(response.data.temperature.current);
   let h1 = document.querySelector("#temp");
-  h1.innerHTML = `${temperature}`;
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
   let humidElement = document.querySelector("#humid");
   let windElement = document.querySelector("#wind");
 
 
+  h1.innerHTML = `${temperature}`;
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
-  humidElement.innerHTML = response.data.temperature.humidity;
-  windElement.innerHTML = response.data.temperature.wind.speed;
+  humidElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windElement.innerHTML = `${response.data.wind.speed}km/h`;
 
 }
 
-let cityInput = document.querySelector("#city-input");
+
 
 
 axios
