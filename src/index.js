@@ -25,16 +25,16 @@ function formatDate(date) {
 
 function search(event) {
   event.preventDefault();
-  let cityElement = document.querySelector("#city");
   let cityInput = document.querySelector("#city-input");
-  cityElement.innerHTML = cityInput.value;
-  
-  axios
-    .get(`${apiCall}?query=${cityInput.value}&key=${apiKey}`)
-    .then(showTemperature);
-    
+
+   callApi(cityInput.value); 
 }
 
+function callApi(cityName) {
+   axios
+     .get(`${apiCall}?query=${cityName}&key=${apiKey}`)
+     .then(showTemperature);
+}
 
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
@@ -47,25 +47,30 @@ let apiKey = "932b0cf59t619af0fb48c1o3bb3c2680";
 let apiCall = "https://api.shecodes.io/weather/v1/current";
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.temperature.current);
-  let h1 = document.querySelector("#temp");
-  let cityElement = document.querySelector("#city");
-  let descriptionElement = document.querySelector("#description");
-  let humidElement = document.querySelector("#humid");
-  let windElement = document.querySelector("#wind");
+
+  if (response.data.status !== 'not_found') {
+
+    let temperature = Math.round(response.data.temperature.current);
+    let h2 = document.querySelector("#temp");
+    let cityElement = document.querySelector("#city");
+    let descriptionElement = document.querySelector("#description");
+    let humidElement = document.querySelector("#humid");
+    let windElement = document.querySelector("#wind");
+    let iconElement = document.querySelector("#icon");
 
 
-  h1.innerHTML = `${temperature}`;
-  cityElement.innerHTML = response.data.city;
-  descriptionElement.innerHTML = response.data.condition.description;
-  humidElement.innerHTML = `${response.data.temperature.humidity}%`;
-  windElement.innerHTML = `${response.data.wind.speed}km/h`;
+
+
+    h2.innerHTML = `${temperature}`;
+    cityElement.innerHTML = response.data.city;
+    descriptionElement.innerHTML = response.data.condition.description;
+    humidElement.innerHTML = `${response.data.temperature.humidity}%`;
+    windElement.innerHTML = `${response.data.wind.speed}km/h`;
+    iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon" id="weather-icon"/>`;
+  }
 
 }
 
+callApi('Lisbon');
 
 
-
-axios
-  .get(`${apiCall}?query=${cityInput.value}&key=${apiKey}`)
-  .then(showTemperature);
